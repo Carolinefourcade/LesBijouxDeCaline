@@ -12,7 +12,7 @@ class HomeController extends AbstractController
 {
     /**
      * @return Response
-     * @Route("/home", name="wild_home")
+     * @Route("/", name="wild_home")
      */
     public function index() : Response
     {
