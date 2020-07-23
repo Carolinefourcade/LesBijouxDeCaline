@@ -12,3 +12,4 @@ import '../scss/app.scss';
 // import $ from 'jquery';
 
 require('./materialize.js')
+require('./materializeInit.js')

@@ -25,5 +25,15 @@ class HomeController extends AbstractController
             'jewelry' => $jewelryRepository->findAll()
         ]);
     }
-
+    /**
+     * @Route("/{id}", name="jewelry_show", methods={"GET"})
+     * @param Jewelry $jewelry
+     * @return Response
+     */
+    public function show(Jewelry $jewelry): Response
+    {
+        return $this->render('jewelry/show.html.twig', [
+            'jewelry' => $jewelry,
+        ]);
+    }
 }
