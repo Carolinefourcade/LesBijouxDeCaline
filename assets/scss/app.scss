@@ -1,1 +1,13 @@
 @import "~materialize-css";
+
+img.responsive-img{
+  max-width: 15%;
+
+}
+.img-index{
+  max-width: 20%;
+  height: 50px;
+}
+.img-welcome{
+  background-size: contain;
+}

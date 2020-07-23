@@ -17,6 +17,8 @@ class JewelryController extends AbstractController
 {
     /**
      * @Route("/", name="jewelry_index", methods={"GET"})
+     * @param JewelryRepository $jewelryRepository
+     * @return Response
      */
     public function index(JewelryRepository $jewelryRepository): Response
     {
@@ -27,6 +29,8 @@ class JewelryController extends AbstractController
 
     /**
      * @Route("/new", name="jewelry_new", methods={"GET","POST"})
+     * @param Request $request
+     * @return Response
      */
     public function new(Request $request): Response
     {
@@ -50,6 +54,8 @@ class JewelryController extends AbstractController
 
     /**
      * @Route("/{id}", name="jewelry_show", methods={"GET"})
+     * @param Jewelry $jewelry
+     * @return Response
      */
     public function show(Jewelry $jewelry): Response
     {
@@ -60,6 +66,9 @@ class JewelryController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="jewelry_edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param Jewelry $jewelry
+     * @return Response
      */
     public function edit(Request $request, Jewelry $jewelry): Response
     {
@@ -80,6 +89,9 @@ class JewelryController extends AbstractController
 
     /**
      * @Route("/{id}", name="jewelry_delete", methods={"DELETE"})
+     * @param Jewelry $jewelry
+     * @param Request $request
+     * @return Response
      */
     public function delete(Request $request, Jewelry $jewelry): Response
     {
