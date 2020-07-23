@@ -3,7 +3,7 @@
 {% block title %}Jewelry{% endblock %}
 
 {% block body %}
-    <h1>Jewelry</h1>
+    <h1>{{ jewelry.category.name }}: {{ jewelry.name }}</h1>
 
     <table class="table">
         <tbody>
@@ -12,20 +12,24 @@
                 <td>{{ jewelry.id }}</td>
             </tr>
             <tr>
-                <th>Name</th>
+                <th>Nom</th>
                 <td>{{ jewelry.name }}</td>
             </tr>
             <tr>
-                <th>Picture</th>
-                <td>{{ jewelry.picture }}</td>
+                <th>Catégorie</th>
+                <td>{{ jewelry.category.name }}</td>
+            </tr>
+            <tr>
+                <th>Photo</th>
+                <td><img width="20%" src="{{ jewelry.picture }}" alt="{{ jewelry.name }}"></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>{{ jewelry.description }}</td>
             </tr>
             <tr>
-                <th>Price</th>
-                <td>{{ jewelry.price }}</td>
+                <th>Prix</th>
+                <td>{{ jewelry.price }}€</td>
             </tr>
             <tr>
                 <th>Identifier</th>
@@ -34,7 +38,7 @@
         </tbody>
     </table>
 
-    <a href="{{ path('jewelry_index') }}">back to list</a>
+    <a href="{{ path('jewelry_index') }}">Retour à la liste</a>
 
     <a href="{{ path('jewelry_edit', {'id': jewelry.id}) }}">edit</a>
 

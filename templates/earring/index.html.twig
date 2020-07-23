@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{% for jewelry in jewelries %}
+    <ul class="center-align">
+        <li>{{ jewelry.name }}</li>
+        <li><img width="15%" src="{{ jewelry.picture }}" alt=""></li>
+        <li>{{ jewelry.description }}</li>
+        <li>{{ jewelry.price }}€</li>
+    </ul>
+    {% endfor %}
+{% endblock %}

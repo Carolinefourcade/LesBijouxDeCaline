@@ -3,11 +3,13 @@
 {% block title %}Edit Jewelry{% endblock %}
 
 {% block body %}
-    <h1>Edit Jewelry</h1>
+    <h1>Modifier {{ jewelry.name }}</h1>
 
-    {{ include('jewelry/_form.html.twig', {'button_label': 'Update'}) }}
+    <a href="{{ path('jewelry_index') }}"><button class="btn blue">{{ button_label|default('Retour à la liste des articles') }}</button></a>
 
-    <a href="{{ path('jewelry_index') }}">back to list</a>
+    {{ include('jewelry/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+    <br>
 
     {{ include('jewelry/_delete_form.html.twig') }}
 {% endblock %}
