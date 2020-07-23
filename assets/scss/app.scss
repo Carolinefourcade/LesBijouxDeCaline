@@ -1,0 +1,13 @@
+@import "~materialize-css";
+@import "./cards";
+img.responsive-img{
+  max-width: 15%;
+
+}
+.img-index{
+  max-width: 20%;
+  height: 50px;
+}
+.img-welcome{
+  background-size: contain;
+}

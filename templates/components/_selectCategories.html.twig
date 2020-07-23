@@ -1,0 +1,4 @@
+{% for category in categories %}
+    <a class="dropdown-item text-danger"
+       href="{{ path('wild_show_category', { 'categoryName': category.name|lower }) }}">{{ category.name }}</a>
+{% endfor %}

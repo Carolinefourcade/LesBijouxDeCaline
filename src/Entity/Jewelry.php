@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\JewelryRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity(repositoryClass=JewelryRepository::class)
@@ -43,7 +44,8 @@ class Jewelry
     private $identifier;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Category::class)
+     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="jewelries")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $category;
 
