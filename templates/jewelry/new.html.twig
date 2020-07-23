@@ -3,9 +3,11 @@
 {% block title %}New Jewelry{% endblock %}
 
 {% block body %}
-    <h1>Create new Jewelry</h1>
+    <h1>Ajouter un nouvel article</h1>
+
+    <a href="{{ path('jewelry_index') }}"><button class="btn blue">{{ button_label|default('Retour à la liste des articles') }}</button></a>
 
     {{ include('jewelry/_form.html.twig') }}
 
-    <a href="{{ path('jewelry_index') }}">back to list</a>
+
 {% endblock %}

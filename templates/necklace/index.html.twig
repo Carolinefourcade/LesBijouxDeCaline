@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Les colliers {% endblock %}
+
+{% block body %}
+    <h1 class="center-align blue-grey-text">Nos colliers</h1>
+{% for jewelry in jewelries %}
+    <ul class="center-align">
+        <li>{{ jewelry.name }}</li>
+        <li><img src="{{ jewelry.picture }}" alt="{{ jewelry.name }}"></li>
+        <li>{{ jewelry.description }}</li>
+        <li>{{ jewelry.price }}€</li>
+    </ul>
+{% else %}
+    <h5 class="center-align">Plus de colliers en stock</h5>
+    <div class="row">
+        <img class="materialboxed" width="650" src="https://www.cjoint.com/doc/20_07/JGxpgZuIjUA_Logo.jpg" alt="">
+
+    </div>
+    {% endfor %}
+{% endblock %}

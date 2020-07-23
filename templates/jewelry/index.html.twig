@@ -3,18 +3,19 @@
 {% block title %}Jewelry index{% endblock %}
 
 {% block body %}
-    <h1 class="blue-grey-text center-align" >Les différents Bijoux</h1>
+    <h1 >Les différents Bijoux</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Nom</th>
-                <th>Image</th>
+                <th>Catégorie</th>
                 <th>Description</th>
                 <th>Prix</th>
+                <th></th>
                 <th>Modifier</th>
-                <th>Supprimer</th>
+                <th>Image</th>
             </tr>
         </thead>
         <tbody>
@@ -22,17 +23,18 @@
             <tr>
                 <td>{{ jewelry.id }}</td>
                 <td>{{ jewelry.name }}</td>
-                <td><img class="responsive-img" width="20%" src="{{ jewelry.picture }}" alt="{{ jewelry.name }}"></td>
+                <td class="col s4">{{ jewelry.category.name }}</td>
                 <td>{{ jewelry.description }}</td>
                 <td>{{ jewelry.price }}€</td>
 
                 <td>
-                    <a href="{{ path('jewelry_show', {'id': jewelry.id}) }}"><i class="material-icons">visibility</i></a>
+                    <a href="{{ path('jewelry_show', {'id': jewelry.id}) }}"><i class="material-icons"></i></a>
 
                 </td>
                 <td>
                     <a href="{{ path('jewelry_edit', {'id': jewelry.id}) }}"><i class="material-icons">edit</i></a>
                 </td>
+                <td><img class="responsive-img" src="{{ jewelry.picture }}" alt="{{ jewelry.name }}"></td>
             </tr>
         {% else %}
             <tr>
@@ -42,5 +44,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('jewelry_new') }}">Create new</a>
+    <a href="{{ path('jewelry_new') }}"><button class="btn blue">{{ button_label|default('Créer un nouvel article') }}</button></a>
 {% endblock %}

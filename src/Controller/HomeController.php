@@ -15,7 +15,7 @@ class HomeController extends AbstractController
     /**
      * @param JewelryRepository $jewelryRepository
      *@return Response
-     * @Route("/", name="wild_home")
+     * @Route("/", name="jewelry_home")
      */
     public function index(JewelryRepository $jewelryRepository) : Response
     {
