@@ -3,17 +3,40 @@
 {% block title %} Les parures {% endblock %}
 {% block body %}
     <h1 class="blue-grey-text center-align">Nos parures</h1>
-{% for jewelry in jewelries %}
-<ul class="center-align">
-    <li>{{ jewelry.name }}</li>
-    <li><img width="15%" src="{{ jewelry.picture }}" alt="{{ jewelry.name }}"></li>
-    <li>{{ jewelry.price }}€</li>
-</ul>
-{% else %}
-    <h5 class="center-align">Plus de parures en stock</h5>
-    <div class="row">
-        <img class="materialboxed" width="650" src="https://www.cjoint.com/doc/20_07/JGxpgZuIjUA_Logo.jpg" alt="">
+{<div class="row">
 
-    </div>
-{% endfor %}
+    {% for jewelry in jewelries %}
+
+        <div class="col s3">
+            <div class="card">
+
+                <div class="card-image waves-effect waves-block waves-light img-welcome"
+                     style="background: url('{{ jewelry.picture }}') no-repeat center center; background-size: contain;">
+
+                </div>
+                <div class="card-content">
+
+                    <span class="card-title activator grey-text text-darken-4"><i
+                                class="material-icons right blue-text">visibility</i></span>
+                    <p><a href="{{ jewelry.id }}"></a>{{ jewelry.name }}</p>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title blue-text text-darken-4 flow-text">Description<i
+                                class="material-icons right">close</i></span>
+                    <p>{{ jewelry.description }}</p>
+                    <p class="flow-text">{{ jewelry.price }}€</p>
+                </div>
+
+            </div>
+        </div>
+
+    {% else %}
+        <h5 class="center-align">Plus de boucles d'oreilles en stock</h5>
+        <div class="row">
+            <img class="materialboxed" width="650" src="https://www.cjoint.com/doc/20_07/JGxpgZuIjUA_Logo.jpg" alt="">
+
+        </div>
+
+    {% endfor %}
+</div>
 {% endblock %}

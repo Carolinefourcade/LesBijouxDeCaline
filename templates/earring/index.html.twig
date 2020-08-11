@@ -1,19 +1,42 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1 class="center-align blue-grey-text">Nos boucles d'oreilles</h1>
-{% for jewelry in jewelries %}
-    <ul class="center-align">
-        <li>{{ jewelry.name }}</li>
-        <li><img width="15%" src="{{ jewelry.picture }}" alt=""></li>
-        <li>{{ jewelry.description }}</li>
-        <li>{{ jewelry.price }}€</li>
-    </ul>
-{% else %}
-    <h5 class="center-align">Plus de boucles d'oreilles en stock</h5>
-    <div class="row">
-        <img class="materialboxed" width="650" src="https://www.cjoint.com/doc/20_07/JGxpgZuIjUA_Logo.jpg" alt="">
+<h1 class="center-align blue-grey-text">Nos boucles d'oreilles</h1>
 
-    </div>
+<div class="row">
+
+    {% for jewelry in jewelries %}
+
+        <div class="col s3">
+            <div class="card">
+
+                <div class="card-image waves-effect waves-block waves-light img-welcome"
+                     style="background: url('{{ jewelry.picture }}') no-repeat center center; background-size: contain;">
+
+                </div>
+                <div class="card-content">
+
+                    <span class="card-title activator grey-text text-darken-4"><i
+                                class="material-icons right blue-text">visibility</i></span>
+                    <p><a href="{{ jewelry.id }}"></a>{{ jewelry.name }}</p>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title blue-text text-darken-4">Description<i
+                                class="material-icons right">close</i></span>
+                    <p>{{ jewelry.description }}</p>
+                    <p class="flow-text">{{ jewelry.price }}€</p>
+                </div>
+
+            </div>
+        </div>
+
+    {% else %}
+        <h5 class="center-align">Plus de boucles d'oreilles en stock</h5>
+        <div class="row">
+            <img class="materialboxed" width="650" src="https://www.cjoint.com/doc/20_07/JGxpgZuIjUA_Logo.jpg" alt="">
+
+        </div>
+
     {% endfor %}
-{% endblock %}
+</div>
+    {% endblock %}
